@@ -1,0 +1,31 @@
+<div class="preact">
+  {{- "<!-- Preact component -->" | safeHTML }}
+  {{- $script := .widget }}
+  {{- $data := .data }}
+
+  <div class="loader">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  {{ with $script.css -}}
+    <link href="{{ relURL . }}" rel="stylesheet">
+  {{- end }}
+
+  {{ with $script.js -}}
+    <!-- Preact Data provided as JSON props  -->
+    {{ with $data -}}
+      <script type="text/props">
+        {{ . | jsonify }}
+      </script>
+    {{- end }}
+
+    <!-- Transipiling JS code with Babel and Node  -->
+    {{- $transpiled := resources.Get . | babel | js.Build (dict "minify" true)  -}}
+
+    <script async src="{{ $transpiled.Permalink }}"></script>
+  {{- end }}
+</div>

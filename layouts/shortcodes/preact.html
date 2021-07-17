@@ -1,0 +1,32 @@
+<!-- autreload -->
+<div class="preact">
+  {{- "<!-- Preact component -->" | safeHTML }}
+  {{- $widget := (.Get "widget") }}
+
+  <div class="loader">
+    <div>Loading Preact Widget</div>
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  {{/*
+  {{ with $script.css -}}
+    <link href="{{ relURL . }}" rel="stylesheet">
+  {{- end }}
+  */}}
+
+  {{ with $widget -}}
+    <!-- Preact Data provided as JSON props  -->
+    <script type="text/props">
+      {{ $.Inner }}
+    </script>
+
+    <!-- Transipiling JS code with Babel and Node  -->
+    {{- $transpiled := resources.Get . | babel | js.Build (dict "minify" true)  -}}
+
+    <script async src="{{ $transpiled.Permalink }}"></script>
+  {{- end }}
+</div>

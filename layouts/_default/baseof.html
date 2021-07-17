@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    {{- partial "head.html" . -}}
+    <body id="body">
+        {{ if .Site.Params.maintenance.enable }}
+            {{- partial "maintenance.html" . -}}
+        {{ else }}
+
+            {{- partial "preloader.html" . -}}
+            {{- partial "header.html" . -}}
+            {{- block "main" . }}{{- end }}
+            {{- partial "footer.html" . -}}
+        {{ end }}
+    </body>
+</html>

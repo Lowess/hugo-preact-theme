@@ -1,0 +1,133 @@
+################################### Default Configuration ############################
+baseURL = "https://examplesite.com/"
+title = "Hugo - Preact"
+theme = "hugo-preact-theme"
+# post excert
+summarylength = "20"
+# google analytics
+googleAnalytics = "" # Ex: UA-123-45
+# disable language
+# disableLanguages = ["en"] # disable language from here
+
+defaultContentLanguage = "fr"
+
+removePathAccents = true
+
+
+# unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+#################################### Plugins ##########################################
+
+# Node modules mounts
+[[module.mounts]]
+source = "node_modules/bootstrap/dist/css/bootstrap.min.css"
+target = "static/plugins/bootstrap.min.css"
+
+[[module.mounts]]
+source = "node_modules/animate.css/animate.min.css"
+target = "static/plugins/animate.min.css"
+
+[[module.mounts]]
+source = "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+target = "static/plugins/fontawesome/fontawesome.min.css"
+[[module.mounts]]
+source = "node_modules/@fortawesome/fontawesome-free/webfonts"
+target = "static/plugins/webfonts"
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css?family=Droid+Serif:400|Josefin+Sans:300,400,600,700"
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/fontawesome/fontawesome.min.css"
+[[params.plugins.css]]
+link = "plugins/animate/animate.min.css"
+
+# JS Plugins
+# [[params.plugins.js]]
+# link = "plugins/bootstrap/bootstrap.min.js"
+
+###################################### Navigation ######################################
+
+# homepage section menu
+[[menu.main]]
+name = "Home"
+URL = "/"
+weight = 1
+
+[[menu.main]]
+name = "Static"
+URL = "static"
+weight = 2
+
+[[menu.main]]
+name = "Dynamic"
+URL = "dynamic"
+weight = 3
+
+# footer menu
+[[menu.footer]]
+name = "Home"
+URL = "/"
+weight = 1
+
+[[menu.footer]]
+name = "Static"
+URL = "static"
+weight = 2
+
+[[menu.footer]]
+name = "Dynamic"
+URL = "dynamic"
+weight = 3
+
+
+########################### Default parameters ##########################
+[params]
+logo = "images/preact.png"
+logo_width = "100px"
+# Meta data
+description = "Pico-brasserie Amienoise Expérimentale"
+author = "Florian Dambrine - 110Lab"
+# currency
+currency = "€"
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+# snipcart public api key
+# snipcart_api = "ZDgxY2ZiM2EtMWRmMi00M2ZkLWI1MDAtNzA2MDc0Y2Q1MzJlNjM3MTAzNDIwOTQ1NDA4NjM4"
+
+[params.maintenance]
+enable = false
+image = "images/preact.png"
+
+# Subscription
+[params.subscription]
+# mailchimp subsciption
+mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
+mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074" # replace this code with yours
+
+[params.vimeo]
+id = "402873496"
+
+################################### English language #####################################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+# copyright
+copyright = "Designed & Developed By [Florian Dambrine](http://floriandambrine.com/)"
+
+
+################################### French language #####################################
+[Languages.fr]
+languageName = "Fr"
+languageCode = "fr-fr"
+contentDir = "content/french"
+weight = 2
+# copyright
+copyright = "Designed & Developed By [Florian Dambrine](http://floriandambrine.com/)"
+

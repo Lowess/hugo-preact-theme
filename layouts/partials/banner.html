@@ -1,0 +1,27 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.homepage.banner.enable }}
+{{- with $data.homepage.banner }}
+<!-- hero area -->
+<section id="hero" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 text-center mb-5 mb-md-0">
+				<img class="img-fluid" width="70%" src="{{ .image | absURL }}" alt="">
+			</div>
+			<div class="col-md-9 align-self-center text-center text-md-left">
+				<div class="block">
+					<h1 class="font-weight-bold mb-4 font-size-60  animate__animated animate__fadeInRight animate__slow">{{ .title | markdownify }}</h1>
+					<p class="mb-4 animate__animated animate__fadeInUp animate__delay-1s">{{ .content | markdownify }}</p>
+					{{ if .button.enable }}
+					{{ with .button }}
+					<a href="{{.link|absLangURL}}" class="btn btn-main font-size-20">{{ .label }} </a>
+					{{ end }}
+					{{ end }}
+				</div>
+			</div>
+		</div><!-- .row close -->
+	</div><!-- .container close -->
+</section><!-- header close -->
+{{- end }}
+{{- end }}

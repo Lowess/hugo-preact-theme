@@ -1,0 +1,21 @@
+// Your custom CSS
+
+#homepage {
+  color: white;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(103,58,184,1) 35%, rgba(255,0,247,0.3295693277310925) 100%);
+  margin: 0px;
+  padding: 100px;
+
+  div {
+    a {
+      color: pink;
+    }
+    ul {
+      font-size: 25px;
+      line-height: 1.6;
+      text-align: left;
+      list-style: square;
+    }
+  }
+}

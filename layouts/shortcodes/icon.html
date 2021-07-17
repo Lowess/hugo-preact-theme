@@ -1,0 +1,5 @@
+{{- if .IsNamedParams -}}
+  <i class='fa{{ if .Get "style" }}{{ substr (.Get "style") 0 1 }}{{ end }} fa-{{ .Get "ico" }}'></i>
+{{- else -}}
+  <i class='fa fa-{{ .Get 0 }}'></i>
+{{- end -}}

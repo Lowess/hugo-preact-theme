@@ -1,0 +1,15 @@
+.greetings {
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+
+  .input-group-prepend {
+    height: 70px;
+  }
+  .input-group-text {
+    background-color: $primary-color;
+  }
+  .form-control {
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+  }
+}

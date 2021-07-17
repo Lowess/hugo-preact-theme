@@ -1,0 +1,49 @@
+{
+  "name": "exampleSite",
+  "version": "1.0.0",
+  "description": "Hugo Preact - Example Site",
+  "repository": "Lowess/hugo-preact-theme",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "dev": "run-p dev:**",
+    "dev:watch": "onchange '../assets/js/*' -- sed -i '' -e '1s/.*/<!-- autreload -->/' ../layouts/shortcodes/preact.html",
+    "dev:hugo": "hugo serve -d public -vw --themesDir ../..",
+    "start": "run-p start:**",
+    "start:hugo": "hugo serve -d public -vw",
+    "preview": "run-p preview:**",
+    "preview:hugo": "npm run start:hugo -- -D -F",
+    "prebuild": "rm -rf public",
+    "build": "npm run build:hugo",
+    "build:preview": "npm run build:hugo:preview",
+    "build:hugo": "hugo -d public -v -b ${BASE_URL:-/}",
+    "build:hugo:preview": "npm run build:hugo -- -D -F"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.12.11",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "hugo-bin-extended": "^0.80.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.2.1",
+    "onchange": "^7.1.0",
+    "preact": "^10.5.7",
+    "preact-habitat": "^3.3.0",
+    "preact-render-to-string": "^5.1.12"
+  },
+  "resolutions": {
+    "natives": "1.1.6"
+  }
+}
