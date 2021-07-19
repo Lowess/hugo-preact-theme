@@ -1,0 +1,44 @@
+---
+hugo_env: &hugo_env
+   BASE_URL: https://${DRONE_REPO_OWNER,,}.github.io/${DRONE_REPO_NAME}/
+
+kind: pipeline
+name: hugo-website
+steps:
+  - name: hugo-build
+    image: peaceiris/hugo:v0.84.1-full
+    environment:
+      <<: *hugo_env
+    commands:
+      - hugo --baseURL $BASE_URL
+
+  - name: publish-website
+    image: plugins/gh-pages
+    environment:
+      DRONE_REMOTE_URL: git@github.com:${DRONE_REPO}.git
+    settings:
+      username: Lowess
+      ssh_key:
+        from_secret: github_ssh_key
+      pages_directory: public/
+    when:
+      event: push
+      branch: master
+
+  - name: display_urls
+    image: lowess/drone-tabulate
+    environment:
+      <<: *hugo_env
+    settings:
+      headers:
+        - URL
+      rows:
+        -
+          - "Github IO"
+          - https://${DRONE_REPO_OWNER,,}.github.io/${DRONE_REPO_NAME}/
+        -
+          - "Custom Domain"
+          - $BASE_URL
+    when:
+      event: push
+      branch: master
