@@ -17,7 +17,8 @@
     "build": "npm run build:hugo",
     "build:preview": "npm run build:hugo:preview",
     "build:hugo": "hugo -d public -v -b ${BASE_URL:-/}",
-    "build:hugo:preview": "npm run build:hugo -- -D -F"
+    "build:hugo:preview": "npm run build:hugo -- -D -F",
+    "test": "jest"
   },
   "author": "",
   "license": "MIT",
@@ -30,11 +31,15 @@
     "@babel/plugin-transform-react-jsx": "^7.17.3",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
+    "@testing-library/preact": "^2.0.1",
+    "@types/jest": "^27.4.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "hugo-bin-extended": "^0.93.3",
+    "jest": "^27.5.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   },
   "dependencies": {

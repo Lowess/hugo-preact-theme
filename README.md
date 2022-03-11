@@ -8,6 +8,8 @@ This repository contains a theme for [Hugo](https://gohugo.io/).
 - Node & SASS asset pipeline with [Hugo pipes (assets processing)](https://gohugo.io/hugo-pipes/)
 - [Fontawesome](https://fontawesome.com/) icon pack
 - Multilingual support
+- [Typescript](https://www.typescriptlang.org/) TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- [Jest](https://jestjs.io/) - testing
 
 ## Installation
 
