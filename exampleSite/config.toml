@@ -150,3 +150,11 @@ copyright = "Designed & Developed By [Florian Dambrine](http://floriandambrine.c
   [security.http]
     methods = ['(?i)GET|POST']
     urls = ['.*']
+
+################################### Build configs #####################################
+
+
+[build]
+  noJSConfigInAssets = true
+  useResourceCacheWhen = 'fallback'
+  writeStats = false

@@ -1,13 +1,8 @@
+/** @jsx h */
 import { h } from 'preact';
 import habitat from "preact-habitat";
-
-import { useState, useEffect } from 'preact/hooks';
-
+import { useState } from 'preact/hooks';
 import Name from './name';
-
-// Mandatory for hugo to work
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 interface Props {
   name : string
@@ -23,9 +18,7 @@ const Greetings = (props : Props) => {
       <form className="form-inline">
         <label className="sr-only" for="inputName">Greetings</label>
         <div className="input-group mb-2 mr-sm-2">
-          <div className="input-group-prepend">
             <div className="input-group-text">Hello</div>
-          </div>
           <input type="text" className="form-control" id="inputName" value={name} placeholder="Florian" onInput={(e) => {setName(e.target.value)}}/>
         </div>
      </form>
@@ -35,6 +28,7 @@ const Greetings = (props : Props) => {
 
 let greetingsWidget = habitat(Greetings);
 
+// @ts-ignore
 greetingsWidget.render({
   inline: true,
 });
