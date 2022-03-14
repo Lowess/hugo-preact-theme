@@ -40,3 +40,10 @@ $ npm install animate.css --save
 # Install fontawesome icon pack
 $ npm install @fortawesome/fontawesome-free --save
 ```
+
+## Cli
+
+To run cli, you need to execute following command.
+```
+$ make cli
+```
