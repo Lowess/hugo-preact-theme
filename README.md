@@ -11,6 +11,7 @@ This repository contains a theme for [Hugo](https://gohugo.io/).
 - [Typescript](https://www.typescriptlang.org/) TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 - [Jest](https://jestjs.io/) - testing
 
+
 ## Installation
 
 Navigate to your themes folder in your Hugo site and use the following commands:

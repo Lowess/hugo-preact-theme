@@ -1,4 +1,4 @@
-.PHONY: install run build test
+.PHONY: install run build test cli
 
 dev:
 	npm run dev
@@ -15,3 +15,6 @@ build:
 
 test:
 	npm run test
+
+cli:
+	node ./tools/cli/cli.js
