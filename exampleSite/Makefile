@@ -1,5 +1,7 @@
 .PHONY: install run build test cli
 
+URL = https://lowess.github.io/hugo-preact-theme
+
 dev:
 	npm run dev
 
@@ -10,7 +12,7 @@ run:
 	npm start
 
 build:
-	export BASE_URL=https://lowess.github.io/110lab
+	export BASE_URL=$(URL)
 	npm run build
 
 test:
