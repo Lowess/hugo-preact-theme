@@ -7,7 +7,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique dui dapib
 
 {{< preact widget="js/greetings.tsx" >}}
 {
-  "name": "World"
+  "initialName": "World"
 }
 {{< /preact >}}
 

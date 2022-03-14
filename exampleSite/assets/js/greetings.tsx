@@ -15,9 +15,7 @@ function Greetings({ initialName }: Props) {
         <div className="greetings container p-3">
             <h3>Greetings Widgets</h3>
             <p>
-                Nice to see you
-                <Name name={name} />
-                !
+                Nice to see you <Name name={name} />!
             </p>
             <form className="form-inline">
                 <label className="sr-only" htmlFor="inputName">Greetings</label>

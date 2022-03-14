@@ -45,7 +45,7 @@ module.exports = {
         // Trust typescript with imports.
         'import/no-unresolved': 0,
         'react/jsx-filename-extension': 0,
-        'react/jsx-one-expression-per-line': 1,
+        'react/jsx-one-expression-per-line': 0,
         'jsx-a11y/label-has-associated-control': 0,
         '@typescript-eslint/ban-ts-ignore': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
