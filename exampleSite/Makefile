@@ -1,4 +1,4 @@
-.PHONY: install run build
+.PHONY: install run build test cli
 
 dev:
 	npm run dev
@@ -12,3 +12,9 @@ run:
 build:
 	export BASE_URL=https://lowess.github.io/110lab
 	npm run build
+
+test:
+	npm run test
+
+cli:
+	node ./tools/cli/cli.js

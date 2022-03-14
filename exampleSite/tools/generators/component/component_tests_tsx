@@ -1,0 +1,11 @@
+import { h } from 'preact';
+import { render } from '@testing-library/preact';
+import <%= capitalize(name) %> from './<%= capitalize(name) %>';
+
+describe('<%= capitalize(name) %>', () => {
+    test('should render successfully', () => {
+        const { container } = render(<<%= capitalize(name) %> />);
+
+        expect(container).toBeTruthy();
+    });
+});

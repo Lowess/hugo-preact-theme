@@ -1,0 +1,16 @@
+/** @jsx h */
+import { h } from 'preact';
+
+interface Props {
+
+}
+
+function <%= capitalize(name) %>(props: Props) {
+    return (
+        <div>
+            Foo! Bar!
+        </div>
+    );
+}
+
+export default <%= capitalize(name) %>;

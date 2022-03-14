@@ -1,17 +1,35 @@
 {
-  "presets": [
-    "@babel/preset-env"
-  ],
-  "plugins": [
-    "@babel/plugin-syntax-object-rest-spread",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-proposal-class-properties",
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "pragma": "h"
-      }
+    "presets": [
+        "@babel/preset-env",
+        [
+            "@babel/preset-typescript",
+            {
+                "jsxPragma": "h"
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-object-rest-spread",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "pragma": "h"
+            }
+        ],
+        // React compat
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "."
+                ],
+                "alias": {
+                    "react": "preact/compat",
+                    "react-dom": "preact/compat"
+                }
+            }
+        ]
     ]
-  ]
 }
-

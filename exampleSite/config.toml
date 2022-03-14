@@ -135,3 +135,25 @@ weight = 2
 # copyright
 copyright = "Designed & Developed By [Florian Dambrine](http://floriandambrine.com/)"
 
+
+################################### Security configs #####################################
+
+[security]
+  enableInlineShortcodes = false
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^babel']
+    osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+  [security.funcs]
+    getenv = ['^HUGO_']
+
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']
+
+################################### Build configs #####################################
+
+[build]
+  noJSConfigInAssets = true
+  useResourceCacheWhen = 'fallback'
+  writeStats = false
