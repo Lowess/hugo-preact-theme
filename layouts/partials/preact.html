@@ -1,13 +1,17 @@
-<div class="preact">
+{{- $script := .widget }}
+{{- $data := .data }}
+{{ $id := printf "preact-%d" now.UnixNano }}
+
+<div id="root" class="preact-{{ $id }}">
   {{- "<!-- Preact component -->" | safeHTML }}
-  {{- $script := .widget }}
-  {{- $data := .data }}
 
   <div class="loader">
-    <div class="lds-facebook">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="loader">
+      <div class="lds-facebook">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </div>
 
@@ -24,8 +28,21 @@
     {{- end }}
 
     <!-- Transipiling JS code with Babel and Node  -->
-    {{- $transpiled := resources.Get . | babel | js.Build (dict "minify" true)  -}}
+    {{ $defines := dict }}
 
-    <script async src="{{ $transpiled.Permalink }}"></script>
+    {{ $minify := hugo.IsProduction }}
+    {{ $uglify := hugo.IsProduction }}
+
+    {{ if hugo.IsProduction }}
+      {{ $defines = dict "process.env.NODE_ENV" `"production"` }}
+    {{ else }}
+      {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
+    {{ end }}
+
+    {{ $opts := dict "JSXFactory" "h" "defines" $defines "minify" $minify "uglify" $uglify }}
+
+    {{- $transpiled := resources.Get . | babel | js.Build $opts  -}}
+
+    <script async type="text/javascript" src="{{ $transpiled.RelPermalink }}"  data-mount-in=".preact-{{ $id }}"></script>
   {{- end }}
 </div>
