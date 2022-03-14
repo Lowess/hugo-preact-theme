@@ -1,7 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const inquirer = require('inquirer');
 const {
-    createComponent
-} = require ('./commands/index.js');
+    createComponent,
+} = require('./commands/index.js');
 
 inquirer
     .prompt([
@@ -11,17 +13,17 @@ inquirer
             message: 'What do you want to do?',
             choices: [
                 'create-component',
-                'exit'
+                'exit',
             ],
         },
     ])
     .then((answers) => {
-        switch(answers.action) {
-            case 'create-component':
-                createComponent();
+        switch (answers.action) {
+        case 'create-component':
+            createComponent();
             break;
 
-            default:
-                console.log('exiting..');
+        default:
+            console.log('exiting..');
         }
     });

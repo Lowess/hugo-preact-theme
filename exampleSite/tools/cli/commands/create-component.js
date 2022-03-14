@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line import/no-extraneous-dependencies
 const inquirer = require('inquirer');
 const { generateFile } = require('../../generators/generate-file');
 const { capitalize } = require('../../generators/helpers');
@@ -14,20 +16,19 @@ const questions = [
     {
         type: 'input',
         name: 'dir',
-        message: "Destination directory relative to `assets/js/`",
+        message: 'Destination directory relative to `assets/js/`',
     },
     {
         type: 'confirm',
         name: 'tests',
         default: true,
-        message: "Create tests?",
+        message: 'Create tests?',
     },
-]
+];
 
 // Execute prompt
 const createComponent = () => inquirer.prompt(questions).then((answers) => {
-
-    const {name, dir, tests} = answers;
+    const { name, dir, tests } = answers;
 
     const path = `./assets/js/${dir}/`;
     const fileName = `${capitalize(name)}.tsx`;
@@ -39,19 +40,19 @@ const createComponent = () => inquirer.prompt(questions).then((answers) => {
         fileName,
         {
             capitalize,
-            name: name
-        }
+            name,
+        },
     );
 
-    if(tests) {
+    if (tests) {
         generateFile(
             './tools/generators/component/component_tests_tsx',
             path,
             testsFileName,
             {
                 capitalize,
-                name: name
-            }
+                name,
+            },
         );
     }
 });

@@ -5,7 +5,7 @@ interface Props {
 
 }
 
-const <%= capitalize(name) %> = (props: Props) => {
+function <%= capitalize(name) %>(props: Props) {
     return (
         <div>
             Foo! Bar!
@@ -13,4 +13,4 @@ const <%= capitalize(name) %> = (props: Props) => {
     );
 }
 
-export default <%= capitalize(name) %>
+export default <%= capitalize(name) %>;

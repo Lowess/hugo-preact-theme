@@ -5,10 +5,10 @@ interface Props {
     name: string
 }
 
-const Name = ({ name }: Props) => {
+function Name({ name }: Props) {
     return (
         <b>{name}</b>
     );
 }
 
-export default Name
+export default Name;
