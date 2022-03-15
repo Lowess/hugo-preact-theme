@@ -3,12 +3,12 @@
 
 name = "Hugo Preact"
 license = "MIT"
-licenselink = "https://github.com/Lowess/hugo-preact/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
+licenselink = "https://github.com/Lowess/hugo-preact-theme/blob/master/LICENSE"
+description = "Jamstack theme for Hugo and Preact"
+homepage = "https://lowess.github.io/hugo-preact-theme/"
 tags = ["preact"]
 features = []
-min_version = "0.41.0"
+min_version = "0.84.0"
 
 [author]
   name = "Florian Dambrine"
