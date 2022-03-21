@@ -104,7 +104,7 @@ contact_form_action = "#" # contact form works with https://formspree.io
 # snipcart_api = "ZDgxY2ZiM2EtMWRmMi00M2ZkLWI1MDAtNzA2MDc0Y2Q1MzJlNjM3MTAzNDIwOTQ1NDA4NjM4"
 
 [params.maintenance]
-enable = true
+enable = false
 title = "Maintenance mode"
 message = "Coming back online soon..."
 image = "images/preact.png"
