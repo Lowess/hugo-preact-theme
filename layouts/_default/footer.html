@@ -1,0 +1,14 @@
+{{ "<!-- Footer -->" | safeHTML }}
+{{- block "footer" . }}
+  <footer id="portal-footer">
+    <p class="gds-text--header-xs -text-center">
+        &copy; {{ replace .Site.Params.copyright "{year}" now.Year | markdownify }}
+    </p>
+  </footer>
+{{- end }}
+
+{{ "<!-- Javascript -->" | safeHTML }}
+{{- partial "javascript.html" . }}
+
+{{ "<!-- Inline JS -->" | safeHTML }}
+{{- block "inlinejs" . }}{{- end }}

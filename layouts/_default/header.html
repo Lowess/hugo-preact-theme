@@ -1,0 +1,68 @@
+<!-- navigation -->
+<header class="sticky-top bg-white">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+
+      {{- block "header_left" . }}
+      <ul class="nav flex-row">
+        <li class="nav-item">
+          <a class="navbar-brand" href="{{ site.BaseURL }}">
+            {{ if site.Params.logo }}
+            <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" {{with
+              site.Params.logo_width}}width="{{.}}" {{end}}>
+            {{ else }}
+            {{ site.Title }}
+            {{ end }}
+          </a>
+        </li>
+      </ul>
+      {{ end }}
+
+      {{- block "header_center" . }}
+        <div class="text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            {{ range site.Menus.main }}
+            <li class="nav-item">
+              {{ if .Pre }}
+              {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
+              <a class="nav-link"
+                href='{{ replace (.URL | absLangURL) $lastUrlElement "" }}{{ .Pre }}{{ $lastUrlElement }}'>{{ .Name }}</a>
+              {{ else }}
+              <a class="nav-link"
+                href="{{if .Pre}}{{ site.BaseURL }}{{.Pre }}{{ .URL }}{{else}}{{.URL | absLangURL}}{{end}}">{{ .Name
+                }}</a>
+              {{ end }}
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+
+      {{- block "header_right" . }}
+        <div>
+          <!-- Language List -->
+          {{- if .Site.Params.language.dropdown.enabled -}}
+            <select class="lang-list" id="select-language" onchange="location = this.value;">
+              {{ $siteLanguages := .Site.Languages}}
+              {{ $pageLang := .Page.Lang}}
+              {{ range .Page.AllTranslations }}
+                {{ $translation := .}}
+                {{ range $siteLanguages }}
+                {{ if eq $translation.Lang .Lang }}
+                  {{ $selected := false }}
+                  {{ if eq $pageLang .Lang}}
+                    <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}</option>
+                  {{ else }}
+                    <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ end }}
+            </select>
+          {{- end -}}
+        </div>
+      {{ end }}
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-    {{- partial "head.html" . -}}
+
+    {{- .Render "head"  -}}
+
     <body id="body">
         {{ if .Site.Params.maintenance.enable }}
             {{- partial "maintenance.html" . -}}
         {{ else }}
+            {{- .Render "header" -}}
 
-            {{- partial "preloader.html" . -}}
-            {{- partial "header.html" . -}}
             {{- block "main" . }}{{- end }}
-            {{- partial "footer.html" . -}}
-        {{ end }}
+
+            {{- .Render "footer" -}}
+        {{- end }}
     </body>
 </html>

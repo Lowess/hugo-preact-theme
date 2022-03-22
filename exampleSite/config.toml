@@ -1,22 +1,13 @@
-################################### Default Configuration ############################
+################################### Hugo General Configuration ############################
+
 baseURL = "https://examplesite.com/"
 title = "Hugo - Preact"
 theme = "hugo-preact-theme"
-# post excert
-summarylength = "20"
-# google analytics
+summarylength = "20" # post excert
 googleAnalytics = "" # Ex: UA-123-45
-# disable language
-# disableLanguages = ["en"] # disable language from here
 
 defaultContentLanguage = "fr"
-
-removePathAccents = true
-
-
-# unsafe html
-[markup.goldmark.renderer]
-unsafe = true
+# disableLanguages = ["en"] # disable language from here
 
 #################################### Plugins ##########################################
 
@@ -54,9 +45,8 @@ link = "plugins/animate/animate.min.css"
 # [[params.plugins.js]]
 # link = "plugins/bootstrap/bootstrap.min.js"
 
-###################################### Navigation ######################################
+###################################### Navigation / Menu ######################################
 
-# homepage section menu
 [[menu.main]]
 name = "Home"
 URL = "/"
@@ -93,15 +83,8 @@ weight = 3
 [params]
 logo = "images/preact.png"
 logo_width = "100px"
-# Meta data
-description = "Pico-brasserie Amienoise Expérimentale"
-author = "Florian Dambrine - 110Lab"
-# currency
-currency = "€"
-# contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
-# snipcart public api key
-# snipcart_api = "ZDgxY2ZiM2EtMWRmMi00M2ZkLWI1MDAtNzA2MDc0Y2Q1MzJlNjM3MTAzNDIwOTQ1NDA4NjM4"
+description = "Hugo Preact Theme"
+author = "Florian Dambrine"
 
 [params.maintenance]
 enable = false
@@ -109,36 +92,31 @@ title = "Maintenance mode"
 message = "Coming back online soon..."
 image = "images/preact.png"
 
-# Subscription
-[params.subscription]
-# mailchimp subsciption
-mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
-mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074" # replace this code with yours
+################################### Languages #####################################
 
-[params.vimeo]
-id = "402873496"
+[params.language.dropdown]
+enabled = false
 
-################################### English language #####################################
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
-# copyright
-copyright = "Designed & Developed By [Florian Dambrine](http://floriandambrine.com/)"
+copyright = "Made with love ❤️"
 
-
-################################### French language #####################################
 [Languages.fr]
 languageName = "Fr"
 languageCode = "fr-fr"
 contentDir = "content/french"
 weight = 2
-# copyright
-copyright = "Designed & Developed By [Florian Dambrine](http://floriandambrine.com/)"
-
+copyright = "Fait avec amour ❤️"
 
 ################################### Security configs #####################################
+
+removePathAccents = true
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [security]
   enableInlineShortcodes = false

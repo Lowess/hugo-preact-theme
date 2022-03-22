@@ -1,0 +1,4 @@
+<!-- JS Plugins -->
+{{ range site.Params.plugins.js }}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
