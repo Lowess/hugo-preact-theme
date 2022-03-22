@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 
-    {{- .Render "head"  -}}
+    {{- partial "head.html" . -}}
 
     <body id="body">
         {{ if .Site.Params.maintenance.enable }}
             {{- partial "maintenance.html" . -}}
         {{ else }}
-            {{- .Render "header" -}}
+
+            {{- partial "header.html" . -}}
 
             {{- block "main" . }}{{- end }}
 
-            {{- .Render "footer" -}}
+            {{- partial "footer.html" . -}}
         {{- end }}
     </body>
 </html>
