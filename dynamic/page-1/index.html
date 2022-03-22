@@ -3,13 +3,15 @@
   <meta charset="utf-8">
   <title>Une page dynamique</title>
 
-  <!-- mobile responsive meta -->
+  <!-- Meta block --><!-- Mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Pico-brasserie Amienoise Expérimentale">
-  <meta name="author" content="Florian Dambrine - 110Lab">
+  <meta name="description" content="Hugo Preact Theme">
+
+  <!-- Hugo -->
+  <meta name="author" content="Florian Dambrine">
   <meta name="generator" content="Hugo 0.94.0" />
 
-  <!-- plugins -->
+  <!-- Plugins -->
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid&#43;Serif:400%7cJosefin&#43;Sans:300,400,600,700 ">
   
@@ -29,8 +31,9 @@
   <link rel="icon" href="https://lowess.github.io/hugo-preact-theme/images/favicon.png " type="image/x-icon">
 
   
-  <meta property="og:image" content="https://lowess.github.io/hugo-preact-theme/images/preact.png" />
+    <meta property="og:image" content="https://lowess.github.io/hugo-preact-theme/images/preact.png" />
   
+
   <meta property="og:title" content="Une page dynamique" />
 <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique dui dapibus auctor lacinia. Aliquam ultricies dui porttitor velit finibus, eget dictum orci vehicula." />
 <meta property="og:type" content="article" />
@@ -44,74 +47,47 @@
 </head><body id="body">
         
 <header class="sticky-top bg-white">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="https://lowess.github.io/hugo-preact-theme/">
-        
-          <img src="https://lowess.github.io/hugo-preact-theme/images/preact.png" alt="Hugo - Preact" width="100px">
-        
-      </a>
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
-        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse text-center" id="navigation">
-        <ul class="navbar-nav ml-auto">
-          
-          <li class="nav-item">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+      <ul class="nav flex-row">
+        <li class="nav-item">
+          <a class="navbar-brand" href="https://lowess.github.io/hugo-preact-theme/">
             
-              <a class="nav-link" href="https://lowess.github.io/hugo-preact-theme/">Home</a>
+            <img src="https://lowess.github.io/hugo-preact-theme/images/preact.png" alt="Hugo - Preact" width="100px" >
             
-          </li>
-          
-          <li class="nav-item">
+          </a>
+        </li>
+      </ul>
+      
+        <div class="text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
             
-              <a class="nav-link" href="https://lowess.github.io/hugo-preact-theme/static">Static</a>
+            <li class="nav-item">
+              
+              <a class="nav-link"
+                href="https://lowess.github.io/hugo-preact-theme/">Home</a>
+              
+            </li>
             
-          </li>
-          
-          <li class="nav-item">
+            <li class="nav-item">
+              
+              <a class="nav-link"
+                href="https://lowess.github.io/hugo-preact-theme/static">Static</a>
+              
+            </li>
             
-              <a class="nav-link" href="https://lowess.github.io/hugo-preact-theme/dynamic">Dynamic</a>
+            <li class="nav-item">
+              
+              <a class="nav-link"
+                href="https://lowess.github.io/hugo-preact-theme/dynamic">Dynamic</a>
+              
+            </li>
             
-          </li>
-          
-        </ul>
-        
-        
-        <select class="lang-list" id="select-language" onchange="location = this.value;">
-          
-          
-          
-          
-          
-          
-          
-          
-          <option id="en" value="https://lowess.github.io/hugo-preact-theme/en/dynamic/page-1/">En</option>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <option id="fr" value="https://lowess.github.io/hugo-preact-theme/dynamic/page-1/" selected>Fr
-          </option>
-          
-          
-          
-          
-        </select>
-        
-      </div>
+          </ul>
+        </div>
+      
+        <div>
+          </div>
       
     </nav>
   </div>
@@ -133,7 +109,7 @@
 
 
 
-<div id="root" class="preact-preact-1647854533735122201"><!-- Preact component -->
+<div id="root" class="preact-preact-1647943620338911887"><!-- Preact component -->
 
   <div class="loader">
     <div class="loader">
@@ -162,7 +138,7 @@
       
     
 
-    <script async type="text/javascript" src="/hugo-preact-theme/js/greetings.js"  data-mount-in=".preact-preact-1647854533735122201"></script>
+    <script async type="text/javascript" src="/hugo-preact-theme/js/greetings.js"  data-mount-in=".preact-preact-1647943620338911887"></script>
 </div>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique dui dapibus auctor lacinia. Aliquam ultricies dui porttitor velit finibus, eget dictum orci vehicula. Mauris id accumsan nisi, quis porttitor quam. Morbi sed sapien et leo fermentum dictum. Nunc tincidunt enim non orci luctus molestie. Integer sit amet consequat lectus. Maecenas tristique mollis efficitur. Praesent condimentum scelerisque tristique. Aliquam vitae lacus nibh. Phasellus ipsum lectus, condimentum eget dapibus at, dignissim at urna. Suspendisse tincidunt augue mauris, eu molestie lorem dapibus in. Sed orci odio, faucibus vel lobortis eu, pharetra ac lectus. Phasellus et dolor at ligula rhoncus commodo.</p>
 
@@ -172,39 +148,17 @@
   </div>
 </section>
 
-<footer>
-  <div class="container text-center fixed-bottom">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <a href="/hugo-preact-theme" class="mb-4 d-inline-block"> <img src="https://lowess.github.io/hugo-preact-theme/images/preact.png" alt="Hugo - Preact" width="100px"> </a>
-          <ul class="list-inline footer-menu">
-            
-            <li class="list-inline-item">
-              <a href="https://lowess.github.io/hugo-preact-theme/">Home</a>
-            </li>
-            
-            <li class="list-inline-item">
-              <a href="https://lowess.github.io/hugo-preact-theme/static">Static</a>
-            </li>
-            
-            <li class="list-inline-item">
-              <a href="https://lowess.github.io/hugo-preact-theme/dynamic">Dynamic</a>
-            </li>
-            
-          </ul>
-          <p class="copyright-text">Designed &amp; Developed By <a href="http://floriandambrine.com/">Florian Dambrine</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+<!-- Footer -->
+  <footer id="portal-footer">
+    <p class="gds-text--header-xs -text-center">
+        &copy; Fait avec amour ❤️
+    </p>
+  </footer>
+
+<!-- Javascript -->
 
 
 
-
-
-
-
+<!-- Inline JS -->
     </body>
 </html>
