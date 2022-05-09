@@ -26,10 +26,10 @@
               {{ if .Pre }}
               {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
               <a class="nav-link"
-                href='{{ replace (.URL | absLangURL) $lastUrlElement "" }}{{ .Pre }}{{ $lastUrlElement }}'>{{ .Name }}</a>
+                href='{{ replace (.URL | absLangURL | absURL) $lastUrlElement "" }}{{ .Pre }}{{ $lastUrlElement }}'>{{ .Name }}</a>
               {{ else }}
               <a class="nav-link"
-                href="{{if .Pre}}{{ site.BaseURL }}{{.Pre }}{{ .URL }}{{else}}{{.URL | absLangURL}}{{end}}">{{ .Name
+                href="{{if .Pre}}{{ site.BaseURL }}{{.Pre }}{{ .URL }}{{else}}{{.URL | absLangURL | absURL}}{{end}}">{{ .Name
                 }}</a>
               {{ end }}
             </li>

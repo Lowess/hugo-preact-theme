@@ -43,6 +43,6 @@
 
     {{- $transpiled := resources.Get . | babel | js.Build $opts  -}}
 
-    <script async type="text/javascript" src="{{ $transpiled.RelPermalink }}"  data-mount-in=".preact-{{ $id }}"></script>
+    <script async type="module" src="/assets/{{resources.Get .}}"  data-mount-in=".preact-{{ $id }}"></script>
   {{- end }}
 </div>

@@ -16,9 +16,7 @@
   {{ end }}
 
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
-  {{ $options := (dict "includePaths" (slice "node_modules")) }}
-  {{ $styles := resources.Get "scss/style.scss" | toCSS $options | minify }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  <link rel="stylesheet" href="/assets/scss/style.scss" media="screen">
 
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">

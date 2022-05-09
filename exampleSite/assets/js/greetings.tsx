@@ -1,5 +1,4 @@
-/** @jsx h */
-import { h } from 'preact';
+import { h, render } from 'preact';
 import habitat from 'preact-habitat';
 import { useState } from 'preact/hooks';
 import Name from './name';
@@ -13,7 +12,7 @@ function Greetings({ initialName }: Props) {
 
     return (
         <div className="greetings container p-3">
-            <h3>Greetings Widgets</h3>
+            <h3>Greetings Widget</h3>
             <p>
                 Nice to see you <Name name={name} />!
             </p>
@@ -30,8 +29,7 @@ function Greetings({ initialName }: Props) {
 
 const greetingsWidget = habitat(Greetings);
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 greetingsWidget.render({
     inline: true,
+    selector: '',
 });
