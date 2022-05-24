@@ -21,6 +21,10 @@ source = "node_modules/bootstrap/dist/css/bootstrap.min.css"
 target = "static/plugins/bootstrap/bootstrap.min.css"
 
 [[module.mounts]]
+source = "node_modules/bootstrap/dist/js/bootstrap.min.js"
+target = "static/plugins/bootstrap/bootstrap.min.js"
+
+[[module.mounts]]
 source = "node_modules/animate.css/animate.min.css"
 target = "static/plugins/animate/animate.min.css"
 
@@ -42,8 +46,8 @@ link = "/plugins/fontawesome/fontawesome.min.css"
 link = "/plugins/animate/animate.min.css"
 
 # JS Plugins
-# [[params.plugins.js]]
-# link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
 
 ###################################### Navigation / Menu ######################################
 
