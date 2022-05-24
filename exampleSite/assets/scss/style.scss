@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
+@import 'custom';
 /*--
     Common Css
 --*/
@@ -639,4 +640,22 @@ svg {
   display: block;
 }
 
-@import 'custom';
+#navbarSupportedContent {
+  > div {
+    > div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #navbarSupportedContent {
+    > div {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      width:100%;
+    }
+  }
+}
