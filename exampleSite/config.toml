@@ -1,12 +1,12 @@
 ################################### Hugo General Configuration ############################
 
-baseURL = "."
+baseURL = "http://localhost:5173"
 title = "Hugo - Preact"
 theme = "hugo-preact-theme"
 summarylength = "20" # post excert
 googleAnalytics = "" # Ex: UA-123-45
 
-defaultContentLanguage = "fr"
+defaultContentLanguage = "en"
 # disableLanguages = ["en"] # disable language from here
 
 #################################### Plugins ##########################################
@@ -107,13 +107,6 @@ languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
 copyright = "Made with love ❤️"
-
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/french"
-weight = 2
-copyright = "Fait avec amour ❤️"
 
 ################################### Security configs #####################################
 

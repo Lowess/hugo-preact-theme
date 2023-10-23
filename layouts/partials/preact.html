@@ -2,9 +2,7 @@
 {{- $data := .data }}
 {{ $id := printf "preact-%d" now.UnixNano }}
 
-<div id="root" class="preact-{{ $id }}">
-  {{- "<!-- Preact component -->" | safeHTML }}
-
+<div id="{{ $id }}">
   <div class="loader">
     <div class="loader">
       <div class="lds-facebook">
@@ -16,33 +14,33 @@
   </div>
 
   {{ with $script.css -}}
-    <link href="{{ relURL . }}" rel="stylesheet">
+  <link href="{{ relURL . }}" rel="stylesheet">
   {{- end }}
 
   {{ with $script.js -}}
-    <!-- Preact Data provided as JSON props  -->
-    {{ with $data -}}
-      <script type="text/props">
-        {{ . | jsonify }}
+  <!-- Preact Data provided as JSON props  -->
+  {{ with $data -}}
+  <script type="application/json">
+        {{ . }}
       </script>
-    {{- end }}
+  {{- end }}
 
-    <!-- Transipiling JS code with Babel and Node  -->
-    {{ $defines := dict }}
+  <!-- Transipiling JS code with Babel and Node  -->
+  {{ $defines := dict }}
 
-    {{ $minify := hugo.IsProduction }}
-    {{ $uglify := hugo.IsProduction }}
+  {{ $minify := hugo.IsProduction }}
+  {{ $uglify := hugo.IsProduction }}
 
-    {{ if hugo.IsProduction }}
-      {{ $defines = dict "process.env.NODE_ENV" `"production"` }}
-    {{ else }}
-      {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
-    {{ end }}
+  {{ if hugo.IsProduction }}
+  {{ $defines = dict "process.env.NODE_ENV" `"production"` }}
+  {{ else }}
+  {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
+  {{ end }}
 
-    {{ $opts := dict "JSXFactory" "h" "defines" $defines "minify" $minify "uglify" $uglify }}
+  {{ $opts := dict "JSXFactory" "h" "defines" $defines "minify" $minify "uglify" $uglify }}
 
-    {{- $transpiled := resources.Get . | babel | js.Build $opts  -}}
+  {{- $transpiled := resources.Get . | babel | js.Build $opts -}}
 
-    <script async type="module" src="/assets/{{resources.Get .}}"  data-mount-in=".preact-{{ $id }}"></script>
+  <script async type="module" src="/assets/{{resources.Get .}}" data-mount-in="{{ $id }}"></script>
   {{- end }}
 </div>

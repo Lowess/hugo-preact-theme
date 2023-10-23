@@ -78,7 +78,7 @@ function hugoPreact({ hugoOutDir, appDir }: Options): PluginOption {
                 emptyOutDir: false,
                 rollupOptions: {
                     input: getHtmlPages(hugoOutDir, ignoreBuildPaths)
-                }
+                },
             }
         })
     };

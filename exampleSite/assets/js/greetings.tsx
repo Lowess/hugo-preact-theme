@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { h } from 'preact';
 import habitat from 'preact-habitat';
 import { useState } from 'preact/hooks';
 import Name from './name';
@@ -20,7 +20,7 @@ function Greetings({ initialName }: Props) {
                 <label className="sr-only" htmlFor="inputName">Greetings</label>
                 <div className="input-group mb-2 mr-sm-2">
                     <div className="input-group-text">Hello</div>
-                    <input type="text" className="form-control" id="inputName" value={name} placeholder="Florian" onInput={(e) => setName(e.currentTarget.value)} />
+                    <input type="text" className="form-control" id="inputName" value={name} placeholder={name} onInput={(e) => setName(e.currentTarget.value)} />
                 </div>
             </form>
         </div>
@@ -30,6 +30,7 @@ function Greetings({ initialName }: Props) {
 const greetingsWidget = habitat(Greetings);
 
 greetingsWidget.render({
+    selector: '#root',
     inline: true,
-    selector: '',
+    clientSpecified: true
 });

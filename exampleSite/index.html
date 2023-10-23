@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <div data-island="pokemon">
+      <script type="text/props">
+        {"pokemon": "3"}
+      </script>
+    </div>
+    <h2>Special mount</h2>
+    <!-- This takes priority over the other placement -->
+    <!-- Props are scoped to placement so that's why -->
+    <!-- Venosaur doesn't appear -->
+    <div data-island="mount-here-actually"></div>
+
+    <script
+      async
+      data-mount-in='[data-island="mount-here-actually"]'
+      src="https://preact-island.netlify.app/islands/pokemon.island.umd.js"
+    ></script>
+  </body>
+</html>
+
