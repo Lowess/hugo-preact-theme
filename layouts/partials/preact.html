@@ -2,7 +2,7 @@
 {{- $data := .data }}
 {{ $id := printf "preact-%d" now.UnixNano }}
 
-<div id="root" class="preact-{{ $id }}">
+<div id="root" class="{{ $id }}">
   {{- "<!-- Preact component -->" | safeHTML }}
 
   <div class="loader">
@@ -22,8 +22,8 @@
   {{ with $script.js -}}
     <!-- Preact Data provided as JSON props  -->
     {{ with $data -}}
-      <script type="text/props">
-        {{ . | jsonify }}
+      <script type="text/props" data-island-props=".{{ $id }}">
+        {{.}}
       </script>
     {{- end }}
 
@@ -43,6 +43,6 @@
 
     {{- $transpiled := resources.Get . | babel | js.Build $opts  -}}
 
-    <script async type="module" src="/assets/{{resources.Get .}}"  data-mount-in=".preact-{{ $id }}"></script>
+    <script async type="module" src="/assets/{{resources.Get .}}?mount_at=.{{ $id }}"></script>
   {{- end }}
 </div>

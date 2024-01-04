@@ -23,6 +23,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@preact/preset-vite": "^2.7.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
@@ -47,6 +48,7 @@
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "path": "^0.12.7",
+    "sass": "^1.69.6",
     "toml": "^3.0.0",
     "typescript": "^4.6.2",
     "vite": "^2.9.9"
@@ -59,6 +61,7 @@
     "bootstrap-icons": "^1.8.1",
     "preact": "^10.6.6",
     "preact-habitat": "^3.3.0",
+    "preact-island": "^1.1.2",
     "preact-render-to-string": "^5.1.20",
     "react": "npm:@preact/compat@^17.0.3",
     "react-dom": "npm:@preact/compat@^17.0.3",
