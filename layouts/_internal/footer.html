@@ -2,7 +2,9 @@
 {{- block "footer" . }}
   <footer id="portal-footer">
     <p class="gds-text--header-xs -text-center">
+      <small>
         &copy; {{ replace .Site.Params.copyright "{year}" now.Year | markdownify }}
+      </small>
     </p>
   </footer>
 {{- end }}

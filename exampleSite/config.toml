@@ -1,13 +1,13 @@
 ################################### Hugo General Configuration ############################
 
-baseURL = "."
+baseURL = ""
 title = "Hugo - Preact"
 theme = "hugo-preact-theme"
+defaultContentLanguage = "en"
+
 summarylength = "20" # post excert
 googleAnalytics = "" # Ex: UA-123-45
 
-defaultContentLanguage = "fr"
-# disableLanguages = ["en"] # disable language from here
 
 #################################### Plugins ##########################################
 
@@ -58,30 +58,13 @@ weight = 1
 
 [[menu.main]]
 name = "Static"
-URL = "static/"
+URL = "/static/"
 weight = 2
 
 [[menu.main]]
 name = "Dynamic"
-URL = "dynamic/"
+URL = "/dynamic/"
 weight = 3
-
-# footer menu
-[[menu.footer]]
-name = "Home"
-URL = "/"
-weight = 1
-
-[[menu.footer]]
-name = "Static"
-URL = "static"
-weight = 2
-
-[[menu.footer]]
-name = "Dynamic"
-URL = "dynamic"
-weight = 3
-
 
 ########################### Default parameters ##########################
 [params]
@@ -89,6 +72,7 @@ logo = "/images/preact.png"
 logo_width = "100px"
 description = "Hugo Preact Theme"
 author = "Florian Dambrine"
+copyright = "{year}"
 
 [params.maintenance]
 enable = false
@@ -99,21 +83,7 @@ image = "/images/preact.png"
 ################################### Languages #####################################
 
 [params.language.dropdown]
-enabled = true
-
-[Languages.en]
-languageName = "En"
-languageCode = "en-us"
-contentDir = "content/english"
-weight = 1
-copyright = "Made with love ❤️"
-
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/french"
-weight = 2
-copyright = "Fait avec amour ❤️"
+enabled = false
 
 ################################### Security configs #####################################
 
